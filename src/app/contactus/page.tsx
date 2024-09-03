@@ -48,10 +48,11 @@ export default function ContactPage() {
               <textarea
                 id="message"
                 name="message"
-                rows="4"
+                rows={4} // Change here
                 required
                 className="w-full px-3 py-2 border rounded shadow-sm border-gray-300 focus:outline-none focus:ring focus:ring-indigo-200"
               ></textarea>
+
             </div>
             <button
               type="submit"
