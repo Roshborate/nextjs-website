@@ -19,8 +19,10 @@ export default function MainPage() {
     const video = document.querySelector("video");
 
     const handleUserInteraction = () => {
-      video.muted = false;
-      video.play();
+      if (video) {
+        video.muted = false;
+        video.play();
+      }
     };
 
     window.addEventListener("click", handleUserInteraction);
@@ -62,11 +64,10 @@ export default function MainPage() {
 
         {/* Hero Content */}
         <div className="relative z-10 flex items-center justify-center h-full">
-  <h1 className="text-4xl font-bold sm:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 font-serif">
-    Capture Every Moment
-  </h1>
-</div>
-
+          <h1 className="text-4xl font-bold sm:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 font-serif">
+            Capture Every Moment
+          </h1>
+        </div>
       </section>
 
       {/* Portfolio Gallery */}
@@ -77,7 +78,7 @@ export default function MainPage() {
             {/* Example Images */}
             <div className="overflow-hidden rounded-lg">
               <Image
-                src={"/photos/201549.jpg"}
+                src="/photos/201549.jpg"
                 alt="Portfolio Image 1"
                 width={500}
                 height={500}
@@ -86,7 +87,7 @@ export default function MainPage() {
             </div>
             <div className="overflow-hidden rounded-lg">
               <Image
-                src={"/photos/201549.jpg"}
+                src="/photos/201549.jpg"
                 alt="Portfolio Image 2"
                 width={500}
                 height={500}
