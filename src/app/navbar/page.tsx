@@ -14,9 +14,10 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
       <div className="container flex items-center justify-between px-4 py-4 mx-auto">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-gray-800">
-          SB Photography
-        </Link>
+        <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 font-serif hover:text-gray-900">
+  SB Photography
+</Link>
+
 
         {/* Hamburger Menu for Mobile */}
         <button
