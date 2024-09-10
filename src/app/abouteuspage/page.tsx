@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AboutUsPage() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen pt-16 bg-gray-100">
       {/* Hero Section */}
       <section className="relative w-full h-64 bg-cover bg-center" style={{ backgroundImage: "url('/path-to-your-background-image.jpg')" }}>
         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -34,7 +34,7 @@ export default function AboutUsPage() {
           <p className="text-lg text-gray-700 mb-6">
             Get in touch with us today to book your session or learn more about our services.
           </p>
-          <a href="/contact" className="inline-block px-6 py-3 font-semibold text-white bg-indigo-600 rounded hover:bg-indigo-700">
+          <a href="/contactus" className="inline-block px-6 py-3 font-semibold text-white bg-indigo-600 rounded hover:bg-indigo-700">
             Contact Us
           </a>
         </div>

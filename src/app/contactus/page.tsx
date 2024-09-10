@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen pt-16 bg-gray-100"> {/* Added pt-16 for padding-top to account for navbar */}
       {/* Hero Section */}
       <section className="relative w-full h-64 bg-cover bg-center" style={{ backgroundImage: "url('photos/201555.jpg')" }}>
         <div className="absolute text-center inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="relative z-10 flex items-center justify-center h-full ">
           <h1 className="text-4xl font-bold text-white sm:text-5xl">
             Contact Us
           </h1>
@@ -52,7 +52,6 @@ export default function ContactPage() {
                 required
                 className="w-full px-3 py-2 border rounded shadow-sm border-gray-300 focus:outline-none focus:ring focus:ring-indigo-200"
               ></textarea>
-
             </div>
             <button
               type="submit"
