@@ -64,7 +64,10 @@ export default function ContactSection() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
         <Link href="/contactus">
-          <h1 className="text-4xl font-bold text-white sm:text-5xl hover:underline">
+          {/* <h1 className="text-4xl font-bold text-white sm:text-5xl hover:underline">
+            Contact Us
+          </h1> */}
+          <h1 className="text-4xl font-bold text-white sm:text-5xl animate-bounce cursor-pointer">
             Contact Us
           </h1>
         </Link>
