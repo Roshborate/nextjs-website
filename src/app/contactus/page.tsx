@@ -22,9 +22,13 @@ export default function ContactPage() {
           <p className="text-lg text-gray-700 text-center mb-8">
             We would love to hear from you! Please fill out the form below to get in touch with us.
           </p>
-          <form className="max-w-lg mx-auto space-y-4">
+          <form 
+          
+          action="https://formspree.io/f/xjkbdvjv"
+            method="POST"
+          className="max-w-lg mx-auto space-y-4">
             <div>
-              <label className="block mb-1 text-sm font-bold text-gray-700" htmlFor="name">Name</label>
+              <label htmlFor="name"  className="block mb-1 text-sm font-bold text-gray-700" htmlFor="name">Name</label>
               <input
                 type="text"
                 id="name"
@@ -34,7 +38,7 @@ export default function ContactPage() {
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm font-bold text-gray-700" htmlFor="email">Email</label>
+              <label htmlFor="email"  className="block mb-1 text-sm font-bold text-gray-700" htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
@@ -44,7 +48,7 @@ export default function ContactPage() {
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm font-bold text-gray-700" htmlFor="message">Message</label>
+              <label htmlFor="message"  className="block mb-1 text-sm font-bold text-gray-700" htmlFor="message">Message</label>
               <textarea
                 id="message"
                 name="message"
