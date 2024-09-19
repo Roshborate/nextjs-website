@@ -294,5 +294,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     return notFound();
   }
 
-  return <AlbumPage {...data} />;
+  // return <AlbumPage {...data} />;
+  return <AlbumPage albumName={data.albumName} images={data.images} />;
+
 }
