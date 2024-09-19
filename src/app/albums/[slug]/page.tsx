@@ -214,10 +214,61 @@
 
 
 
-import path from 'path';
-import fs from 'fs';
+// import path from 'path';
+// import fs from 'fs';
+// import { notFound } from 'next/navigation';
+// import AlbumPage from '@/app/component/wedding/AlbumPage';
+
+// // Static generation functions
+// export async function generateStaticParams() {
+//   const folderPath = path.join(process.cwd(), 'public', 'photos', 'Wedding');
+//   const folders = fs.readdirSync(folderPath);
+
+//   return folders.map((folder) => ({
+//     slug: folder,
+//   }));
+// }
+
+// export async function fetchAlbumData(slug: string) {
+//   const folderPath = path.join(process.cwd(), 'public', 'photos', 'Wedding', slug);
+
+//   let images: string[] = [];
+//   try {
+//     const imageFiles = fs.readdirSync(folderPath);
+//     images = imageFiles.map((file) => `/photos/Wedding/${slug}/${file}`);
+//   } catch (error) {
+//     console.error('Error reading folder:', error);
+//     return { notFound: true };
+//   }
+
+//   const albumName = slug.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
+
+//   return {
+//     albumName,
+//     images,
+//   };
+// }
+
+// // Main page component
+// export default async function Page({ params }: { params: { slug: string } }) {
+//   const { slug } = params;
+//   console.log('Fetching data for slug:', slug);
+
+//   const data = await fetchAlbumData(slug);
+//   console.log('Fetched data:', data);
+
+//   if (data.notFound) {
+//     return notFound();
+//   }
+
+//   return <AlbumPage {...data} />;
+// }
+
+
+
 import { notFound } from 'next/navigation';
 import AlbumPage from '@/app/component/wedding/AlbumPage';
+import { fetchAlbumData } from '@/app/utils/fetchAlbumData';
 
 // Static generation functions
 export async function generateStaticParams() {
@@ -227,26 +278,6 @@ export async function generateStaticParams() {
   return folders.map((folder) => ({
     slug: folder,
   }));
-}
-
-export async function fetchAlbumData(slug: string) {
-  const folderPath = path.join(process.cwd(), 'public', 'photos', 'Wedding', slug);
-
-  let images: string[] = [];
-  try {
-    const imageFiles = fs.readdirSync(folderPath);
-    images = imageFiles.map((file) => `/photos/Wedding/${slug}/${file}`);
-  } catch (error) {
-    console.error('Error reading folder:', error);
-    return { notFound: true };
-  }
-
-  const albumName = slug.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
-
-  return {
-    albumName,
-    images,
-  };
 }
 
 // Main page component
