@@ -270,6 +270,7 @@ import { notFound } from 'next/navigation';
 import AlbumPage from '@/app/component/wedding/AlbumPage';
 import { fetchAlbumData } from '@/app/utils/fetchAlbumData';
 import path from 'path';
+import fs from 'fs';
 
 // Static generation functions
 export async function generateStaticParams() {
