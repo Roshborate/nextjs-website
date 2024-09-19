@@ -70,34 +70,6 @@ export default function MainPage() {
         </div>
       </section>
 
-      {/* Portfolio Gallery */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 mx-auto">
-          <h2 className="mb-12 text-3xl font-bold text-center">Portfolio</h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {/* Example Images */}
-            <div className="overflow-hidden rounded-lg">
-              <Image
-                src="/photos/201549.jpg"
-                alt="Portfolio Image 1"
-                width={500}
-                height={500}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg">
-              <Image
-                src="/photos/201549.jpg"
-                alt="Portfolio Image 2"
-                width={500}
-                height={500}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            {/* Add more images as needed */}
-          </div>
-        </div>
-      </section>
 
       <section>
         <PhotographyTypes />
