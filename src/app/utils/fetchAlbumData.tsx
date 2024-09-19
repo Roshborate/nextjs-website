@@ -30,14 +30,14 @@
 
 
 
-import path from 'path';
-import fs from 'fs';
+// import path from 'path';
+// import fs from 'fs';
 
-type AlbumData = {
-    albumName: string;
-    images: string[];
-    notFound?: boolean;
-  };
+// type AlbumData = {
+//     albumName: string;
+//     images: string[];
+//     notFound?: boolean;
+//   };
   
 
 //   export async function fetchAlbumData(slug: string) {
@@ -62,28 +62,39 @@ type AlbumData = {
 //     };
 //   }
   
-export async function fetchAlbumData(slug: string) {
-    const folderPath = path.join(process.cwd(), 'public', 'photos', 'Wedding', slug);
-  
-    if (!fs.existsSync(folderPath)) {
-      console.error('Folder does not exist:', folderPath);
-      return { notFound: true };
-    }
-  
-    let images: string[] = [];
-    try {
-      const imageFiles = fs.readdirSync(folderPath);
-      images = imageFiles.map((file) => `/photos/Wedding/${slug}/${file}`);
-    } catch (error) {
-      console.error('Error reading folder:', error);
-      return { notFound: true };
-    }
-  
-    const albumName = slug.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
-  
-    return {
-      albumName,
-      images,
-    };
+
+
+
+import path from 'path';
+import fs from 'fs';
+
+type FetchAlbumDataResult = {
+  albumName: string;
+  images: string[];
+  notFound?: true; // Optional field
+};
+
+export async function fetchAlbumData(slug: string): Promise<FetchAlbumDataResult> {
+  const folderPath = path.join(process.cwd(), 'public', 'photos', 'Wedding', slug);
+
+  if (!fs.existsSync(folderPath)) {
+    console.error('Folder does not exist:', folderPath);
+    return { notFound: true, albumName: '', images: [] };
   }
-  
+
+  let images: string[] = [];
+  try {
+    const imageFiles = fs.readdirSync(folderPath);
+    images = imageFiles.map((file) => `/photos/Wedding/${slug}/${file}`);
+  } catch (error) {
+    console.error('Error reading folder:', error);
+    return { notFound: true, albumName: '', images: [] };
+  }
+
+  const albumName = slug.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
+
+  return {
+    albumName,
+    images,
+  };
+}

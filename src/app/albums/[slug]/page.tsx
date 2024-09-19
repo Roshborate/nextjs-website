@@ -266,6 +266,39 @@
 
 
 
+// import { notFound } from 'next/navigation';
+// import AlbumPage from '@/app/component/wedding/AlbumPage';
+// import { fetchAlbumData } from '@/app/utils/fetchAlbumData';
+// import path from 'path';
+// import fs from 'fs';
+
+// // Static generation functions
+// export async function generateStaticParams() {
+//   const folderPath = path.join(process.cwd(), 'public', 'photos', 'Wedding');
+//   const folders = fs.readdirSync(folderPath);
+
+//   return folders.map((folder) => ({
+//     slug: folder,
+//   }));
+// }
+
+// // Main page component
+// export default async function Page({ params }: { params: { slug: string } }) {
+//   const { slug } = params;
+//   console.log('Fetching data for slug:', slug);
+
+//   const data = await fetchAlbumData(slug);
+//   console.log('Fetched data:', data);
+
+//   if (data.notFound) {
+//     return notFound();
+//   }
+
+//   return <AlbumPage {...data} />;
+// }
+
+
+
 import { notFound } from 'next/navigation';
 import AlbumPage from '@/app/component/wedding/AlbumPage';
 import { fetchAlbumData } from '@/app/utils/fetchAlbumData';
@@ -282,8 +315,15 @@ export async function generateStaticParams() {
   }));
 }
 
+// Define the Props type for the Page component
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
+
 // Main page component
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: PageProps) {
   const { slug } = params;
   console.log('Fetching data for slug:', slug);
 
@@ -294,7 +334,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
     return notFound();
   }
 
-  // return <AlbumPage {...data} />;
+  // Ensure the data passed to AlbumPage matches its expected props
   return <AlbumPage albumName={data.albumName} images={data.images} />;
-
 }
