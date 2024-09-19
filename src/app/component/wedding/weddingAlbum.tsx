@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const folders = [
   {
@@ -32,7 +33,7 @@ const WeddingAlbums = () => {
         {folders.map((folder) => (
           <Link key={folder.slug} href={`/albums/${folder.slug}`}>
             <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-              <img
+              <Image
                 src={folder.coverImage}
                 alt={folder.name}
                 className="w-full h-64 object-cover transition-opacity duration-300 hover:opacity-90"

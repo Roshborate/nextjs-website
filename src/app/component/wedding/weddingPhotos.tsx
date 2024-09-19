@@ -1,6 +1,7 @@
 "use client"; // Add this line at the top if you're using Next.js 13 App Router
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 export default function WeddingPhotos() {
   const photos = [
@@ -62,14 +63,14 @@ export default function WeddingPhotos() {
               className="relative overflow-hidden bg-white rounded-lg shadow-md group cursor-pointer"
               onClick={() => openModal(index)}
             >
-              <img
+              <Image
                 src={photo.image}
                 alt={`Wedding Photo ${photo.id}`}
                 className="object-cover w-full h-48 transition-transform duration-300 transform group-hover:scale-110"
               />
               {/* Full-size preview on hover */}
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <img
+                <Image
                   src={photo.image}
                   alt={`Preview Wedding Photo ${photo.id}`}
                   className="object-contain max-w-xs max-h-60"
@@ -89,7 +90,7 @@ export default function WeddingPhotos() {
               >
                 &times;
               </button>
-              <img
+              <Image
                 src={selectedPhoto.image}
                 alt={`Selected Wedding Photo ${selectedPhoto.id}`}
                 className="w-full pt-14 pb-6 max-w-screen-md max-h-screen object-contain" // Added object-contain for consistent scaling

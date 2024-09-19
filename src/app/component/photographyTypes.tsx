@@ -49,6 +49,7 @@
 
 import React from 'react';
 import Link from 'next/link'; // Import Link
+import Image from 'next/image';
 
 export default function PhotographyTypes() {
   const photographyTypes = [
@@ -75,7 +76,7 @@ export default function PhotographyTypes() {
               <div
                 className="overflow-hidden bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105"
               >
-                <img
+                <Image
                   src={type.image}
                   alt={type.name}
                   className="object-cover w-full h-48 rounded-t-xl"
